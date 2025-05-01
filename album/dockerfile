@@ -1,0 +1,4 @@
+FROM --platform=linux/amd64 eclipse-temurin:21-jdk-alpine
+VOLUME /tmp
+COPY target/album-0.0.1-SNAPSHOT.jar album.jar
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/album.jar"]
